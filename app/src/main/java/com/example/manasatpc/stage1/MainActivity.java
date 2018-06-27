@@ -25,7 +25,7 @@ public class MainActivity extends AppCompatActivity {
     //textView that is display when the list is empty
     private TextView mEmptyTextView;
     //URL for story data from the guardianapis
-    private static final String STORY_REQUEST_URL ="https://earthquake.usgs.gov/fdsnws/event/1/query";
+    private static final String STORY_REQUEST_URL ="https://content.guardianapis.com/search?api-key=8c9e6164-9e81-4e26-a43f-a869c5e96fc1";
     //Adapter for the list of Story
     private AdapterStory mAdapter;
     private View loaderIndictor;
