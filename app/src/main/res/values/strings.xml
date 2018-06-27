@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">Stage 1</string>
+<!-- name the views in custom_list_item_news layout-->
+
+    <string name="article_title">عنوان المقال</string>
+    <string name="tv_department">القسم</string>
+    <string name="tv_author_name">اسم المؤلف</string>
+    <string name="tv_date_published">تاريخ النشر</string>
+
+</resources>

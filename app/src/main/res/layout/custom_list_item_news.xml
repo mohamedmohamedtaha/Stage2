@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+    <ImageView
+        android:id="@+id/im_image_view"
+        android:layout_width="84dp"
+        android:layout_height="84dp"
+        android:layout_margin="16dp"
+        android:src="@drawable/git"
+        />
+    <TextView
+        android:id="@+id/tv_article_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:text="@string/article_title"
+        android:layout_marginTop="32dp"
+        android:layout_toRightOf="@id/im_image_view"
+        />
+
+    <TextView
+        android:id="@+id/tv_department"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:text="@string/tv_department"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="16dp"
+        android:layout_marginTop="32dp"
+        />
+    <TextView
+        android:id="@+id/tv_author_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:text="@string/tv_author_name"
+        android:layout_below="@id/tv_article_title"
+        android:layout_toRightOf="@id/im_image_view"
+        />
+    <TextView
+        android:id="@+id/tv_date_published"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:text="@string/tv_date_published"
+        android:layout_below="@id/tv_department"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="16dp"/>
+</RelativeLayout>
