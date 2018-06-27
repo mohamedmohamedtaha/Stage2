@@ -108,7 +108,7 @@ public class QueryUtils {
              */
             JSONObject storyObject = baseJsonRespone.getJSONObject("response");
 
-            JSONArray results = baseJsonRespone.getJSONArray("results");
+            JSONArray results = storyObject.getJSONArray("results");
 
             //if there are results in the storyArray
             //if storyArray.length()> 0) for each story int the storyArray ,create an link Story object
