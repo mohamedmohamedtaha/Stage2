@@ -1,59 +1,63 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:background="@android:color/white"
->
+    android:background="@android:color/white">
+
     <TextView
         android:id="@+id/tv_article_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        tools:text="@string/article_title"
-        android:layout_marginTop="16dp"
+        android:layout_marginEnd="@dimen/layout_margin"
+        android:layout_marginStart="@dimen/layout_margin"
+        android:layout_marginTop="@dimen/layout_margin"
+        android:textColor="@color/primaryText"
+        android:textSize="@dimen/textSize"
         android:textStyle="bold"
-        android:layout_marginStart="16dp"
-        android:layout_marginEnd="16dp"
-        android:textSize="16sp"
-        />
+        tools:text="@string/article_title" />
+
     <ImageView
         android:id="@+id/im_image_view"
-        android:layout_width="84dp"
-        android:layout_height="84dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="10dp"
-        android:src="@drawable/git"
+        android:layout_width="@dimen/layout_width"
+        android:layout_height="@dimen/layout_width"
         android:layout_below="@id/tv_article_title"
-        />
+        android:layout_marginBottom="@dimen/layout_margin"
+        android:layout_marginStart="@dimen/layout_margin"
+        android:layout_marginTop="@dimen/layout_margin"
+        android:contentDescription="@string/content_image"
+        android:src="@drawable/git" />
 
     <TextView
         android:id="@+id/tv_author_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        tools:text="@string/tv_author_name"
-        android:layout_marginTop="32dp"
         android:layout_below="@id/tv_article_title"
+        android:layout_marginStart="@dimen/layout_margin"
+        android:layout_marginTop="@dimen/layout_marginTop"
         android:layout_toRightOf="@id/im_image_view"
-        android:layout_marginStart="16dp"
-        />
+        android:textColor="@color/primaryText"
+        android:textStyle="bold"
+        tools:text="@string/tv_author_name" />
+
     <TextView
         android:id="@+id/tv_department"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        tools:text="@string/tv_department"
-        android:layout_below="@id/tv_article_title"
         android:layout_alignParentRight="true"
-        android:layout_marginEnd="16dp"
-        android:layout_marginTop="32dp"
-        />
+        android:layout_below="@id/tv_article_title"
+        android:layout_marginEnd="@dimen/layout_margin"
+        android:layout_marginTop="@dimen/layout_marginTop"
+        tools:text="@string/tv_department" />
 
     <TextView
         android:id="@+id/tv_date_published"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        tools:text="@string/tv_date_published"
-        android:layout_below="@id/tv_department"
         android:layout_alignParentRight="true"
-        android:layout_marginRight="16dp"/>
+        android:layout_below="@id/tv_department"
+        android:layout_marginRight="@dimen/layout_margin"
+        android:layout_marginTop="@dimen/layout_margin"
+
+        tools:text="@string/tv_date_published" />
 </RelativeLayout>

@@ -5,11 +5,11 @@ package com.example.manasatpc.stage1;
  */
 
 public class Story {
-    private String image_story;
-    private String mAuther_name, mDepartment, mArticle_title, mUrl;
-    private String mDate_published;
+    //Variables for save Stories
+    private String image_story, mAuther_name, mDepartment, mArticle_title, mUrl, mDate_published;
 
-    public Story(String image_story,String mAuther_name, String mDepartment, String mArticle_title, String mUrl, String mDate_published) {
+    //constructor
+    public Story(String image_story, String mAuther_name, String mDepartment, String mArticle_title, String mUrl, String mDate_published) {
         this.image_story = image_story;
         this.mAuther_name = mAuther_name;
         this.mDepartment = mDepartment;
@@ -18,6 +18,7 @@ public class Story {
         this.mDate_published = mDate_published;
     }
 
+    //this methodes for get Story
     public String getImage_story() {
         return image_story;
     }

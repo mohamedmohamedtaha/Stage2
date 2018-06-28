@@ -12,14 +12,16 @@ import java.util.List;
 public class StoryLoader extends AsyncTaskLoader<List<Story>> {
     private String mUrl;
 
-    public StoryLoader(Context context,String url) {
+    // constructor
+    public StoryLoader(Context context, String url) {
         super(context);
         mUrl = url;
     }
 
+    //this method for load data in background
     @Override
     public List<Story> loadInBackground() {
-        if (mUrl ==null){
+        if (mUrl == null) {
             return null;
         }
         List<Story> stories = QueryUtils.fetchStoryData(mUrl);
