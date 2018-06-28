@@ -19,13 +19,13 @@ import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements LoaderManager.LoaderCallbacks<List<Story>> {
     //Constant value for the story loader ID
     private static final int STORY_LOADER_ID = 1;
     //textView that is display when the list is empty
     private TextView mEmptyTextView;
     //URL for story data from the guardianapis
-    private static final String STORY_REQUEST_URL ="https://content.guardianapis.com/search?api-key=8c9e6164-9e81-4e26-a43f-a869c5e96fc1";
+    private static final String STORY_REQUEST_URL ="https://content.guardianapis.com/search?show-tags=contributor&api-key=8c9e6164-9e81-4e26-a43f-a869c5e96fc1";
     //Adapter for the list of Story
     private AdapterStory mAdapter;
     private View loaderIndictor;
@@ -74,11 +74,11 @@ public class MainActivity extends AppCompatActivity {
 
         //If there is a network connection , fetch data
         if (networkInfo != null && networkInfo.isConnected()){
-      //      LoaderManager loaderManager = getLoaderManager();
-         //   loaderManager.initLoader(STORY_LOADER_ID,null,this);
+           LoaderManager loaderManager = getLoaderManager();
+            loaderManager.initLoader(STORY_LOADER_ID,null,this);
 
-            StoryTask storyTask = new StoryTask();
-            storyTask.execute(STORY_REQUEST_URL);
+         //   StoryTask storyTask = new StoryTask();
+          //  storyTask.execute(STORY_REQUEST_URL);
 
         }else {
              loaderIndictor = findViewById(R.id.loading_indicator);
@@ -87,17 +87,19 @@ public class MainActivity extends AppCompatActivity {
         }
 
             }
-/*
+
     @Override
     public Loader<List<Story>> onCreateLoader(int i, Bundle bundle) {
-        return null;
+        Uri baseUri = Uri.parse(STORY_REQUEST_URL);
+        Uri.Builder builder = baseUri.buildUpon();
+        return new StoryLoader(this,builder.toString());
     }
 
     @Override
     public void onLoadFinished(Loader<List<Story>> loader, List<Story> stories) {
         //Hide loading indicator because teh data has been loaded
-        loaderIndictor.setVisibility(View.GONE);
-
+        View loafdingIndicator = findViewById(R.id.loading_indicator);
+        loafdingIndicator.setVisibility(View.GONE);
         mEmptyTextView.setText("No Story found");
         mAdapter.clear();
 
@@ -114,7 +116,7 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-*/
+
     private class StoryTask extends AsyncTask<String,Void,List<Story>> {
 
         /*

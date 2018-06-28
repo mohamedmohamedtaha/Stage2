@@ -5,20 +5,20 @@ package com.example.manasatpc.stage1;
  */
 
 public class Story {
-    private int image_story;
+    private String image_story;
     private String mAuther_name, mDepartment, mArticle_title, mUrl;
-    private Long mDate_published;
+    private String mDate_published;
 
-    public Story(/*int image_story, String mAuther_name,*/ String mDepartment, String mArticle_title, String mUrl, Long mDate_published) {
-      //  this.image_story = image_story;
-       // this.mAuther_name = mAuther_name;
+    public Story(String image_story,String mAuther_name, String mDepartment, String mArticle_title, String mUrl, String mDate_published) {
+        this.image_story = image_story;
+        this.mAuther_name = mAuther_name;
         this.mDepartment = mDepartment;
         this.mArticle_title = mArticle_title;
         this.mUrl = mUrl;
         this.mDate_published = mDate_published;
     }
 
-    public int getImage_story() {
+    public String getImage_story() {
         return image_story;
     }
 
@@ -38,7 +38,7 @@ public class Story {
         return mUrl;
     }
 
-    public Long getmDate_published() {
+    public String getmDate_published() {
         return mDate_published;
     }
 }

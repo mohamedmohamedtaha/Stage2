@@ -116,16 +116,25 @@ public class QueryUtils {
                 //Get a single story at position i within the list of story
                 JSONObject currentStory = results.getJSONObject(i);
 
-                //for a given story ,extract the JSONObject associated with the key
-                //called "results" ,which represents a list of all properties for that story
-              //  JSONArray resultss = currentStory.getJSONArray("results");
-
-                Long date = currentStory.getLong("webPublicationDate");
+                String date = currentStory.getString("webPublicationDate");
                 String title = currentStory.getString("webTitle");
                 String url = currentStory.getString("webUrl");
                 String department = currentStory.getString("sectionName");
+                JSONArray tags = currentStory.getJSONArray("tags");
+                String firstName = null;
+                String image =null;
+                for (int y = 0; y< tags.length();y++){
+                    JSONObject currentStoryTags = tags.getJSONObject(y);
+                     firstName = currentStoryTags.getString("webTitle");
+                     image = currentStory.getString("bylineImageUrl");
+                }
+
+                //for a given story ,extract the JSONObject associated with the key
+                //called "results" ,which represents a list of all properties for that story
+
+
                 //create a new link Story object with the arguments
-                Story story = new Story(department,title,url,date);
+                Story story = new Story(image,firstName,department,title,url,date);
 
                 //Add the new link story tot he list of stories
                 stores.add(story);
