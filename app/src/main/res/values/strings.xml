@@ -9,5 +9,50 @@
     <string name="no_internet">No Internet Connection.</string>
     <string name="no_name">There is not Name.</string>
     <string name="content_image">Show Image</string>
+    <string name="settings_menu_item">Settings</string>
+    <string name="settings_title">News Settings</string>
+
+    <string name="settings_order_date_label">order date</string>
+    <string name="settings_order_date_key" translatable="false">order date</string>
+    <string name="settings_order_date_default" translatable="false">@string/settings_by_order_date_label_published</string>
+
+    <string name="settings_by_order_date_label_published">published</string>
+    <string name="settings_by_department_value_published" translatable="false">published</string>
+
+    <string name="settings_by_order_date_label_newspaper">newspaper-edition</string>
+    <string name="settings_by_department_value_newspaper" translatable="false">newspaper-edition</string>
+
+    <string name="settings_by_order_date_label_last_modified">last-modified</string>
+    <string name="settings_by_department_value_last_modified" translatable="false">last-modified</string>
+
+
+    <string name="settings_from_date_label"> From Date</string>
+    <string name="settings_from_date_key" translatable="false">From Date</string>
+    <string name="settings_from_date_default" translatable="false">2014-06-20</string>
+
+    <string name="settings_to_date_label">to Date </string>
+    <string name="settings_to_date_key" translatable="false">to Date</string>
+    <string name="settings_to_date_default" translatable="false">2018-06-20</string>
+
+
+    <string name="settings_department_label">Departments</string>
+    <string name="settings_department_key" translatable="false">Departments</string>
+    <string name="settings_department_default" translatable="false">@string/settings_by_department_label_football</string>
+
+    <string name="settings_by_department_label_football">football</string>
+    <string name="settings_by_department_value_football" translatable="false">football</string>
+
+    <string name="settings_by_department_label_sport">sport</string>
+    <string name="settings_by_department_value_sport" translatable="false">sport</string>
+
+    <string name="settings_by_department_label_film">film</string>
+    <string name="settings_by_department_value_film" translatable="false">film</string>
+
+    <string name="settings_by_department_label_music">music</string>
+    <string name="settings_by_department_value_music" translatable="false">music</string>
+
+    <string name="settings_by_department_label_business">business</string>
+    <string name="settings_by_department_value_business" translatable="false">business</string>
+
 
 </resources>

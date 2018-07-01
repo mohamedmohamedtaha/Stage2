@@ -4,11 +4,15 @@ import android.app.LoaderManager;
 import android.content.Context;
 import android.content.Intent;
 import android.content.Loader;
+import android.content.SharedPreferences;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.net.Uri;
+import android.preference.PreferenceManager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
@@ -21,7 +25,9 @@ public class MainActivity extends AppCompatActivity implements LoaderManager.Loa
     //Constant value for the story loader ID
     private static final int STORY_LOADER_ID = 1;
     //URL for story data from the guardianapis
-    private static final String STORY_REQUEST_URL = "https://content.guardianapis.com/search?show-tags=contributor&api-key=8c9e6164-9e81-4e26-a43f-a869c5e96fc1";
+    // private static final String STORY_REQUEST_URL = "https://content.guardianapis.com/search?section=football&show-tags=contributor&api-key=8c9e6164-9e81-4e26-a43f-a869c5e96fc1";
+    private static final String STORY_REQUEST_URL = "https://content.guardianapis.com/search";
+
     //textView that is display when the list is empty
     private TextView mEmptyTextView;
     //Adapter for the list of Story
@@ -85,8 +91,37 @@ public class MainActivity extends AppCompatActivity implements LoaderManager.Loa
 
     @Override
     public Loader<List<Story>> onCreateLoader(int i, Bundle bundle) {
+        SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
+
+        // getString retrieves a String value from the preferences. The second parameter is the default value for this preference.
+        String section = sharedPreferences.getString(getString(R.string.settings_department_key),
+                getString(R.string.settings_department_default));
+
+        String from_date = sharedPreferences.getString(getString(R.string.settings_from_date_key),
+                getString(R.string.settings_from_date_default));
+
+        String to_date = sharedPreferences.getString(getString(R.string.settings_to_date_key),
+                getString(R.string.settings_to_date_default));
+
+        String order_date = sharedPreferences.getString(getString(R.string.settings_order_date_key),
+                getString(R.string.settings_order_date_default));
+
+        // parse breaks apart the URI string that's passed into its parameter
         Uri baseUri = Uri.parse(STORY_REQUEST_URL);
+
+        // buildUpon prepares the baseUri that we just parsed so we can add query parameters to it
         Uri.Builder builder = baseUri.buildUpon();
+
+        // Append query parameter and its value. For example, the `section=football`
+        builder.appendQueryParameter("section", section);
+        builder.appendQueryParameter("from-date", from_date);
+        builder.appendQueryParameter("to-date", to_date);
+        builder.appendQueryParameter("order-date", order_date);
+
+        builder.appendQueryParameter("show-tags", "contributor");
+        builder.appendQueryParameter("api-key", "8c9e6164-9e81-4e26-a43f-a869c5e96fc1");
+        // Return the completed
+        // https://content.guardianapis.com/search?section=football&show-tags=contributor&api-key=8c9e6164-9e81-4e26-a43f-a869c5e96fc1
         return new StoryLoader(this, builder.toString());
     }
 
@@ -111,7 +146,22 @@ public class MainActivity extends AppCompatActivity implements LoaderManager.Loa
 
     }
 
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.main, menu);
+        return true;
+    }
 
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        int id = item.getItemId();
+        if (id == R.id.action_settings) {
+            Intent settingsIntent = new Intent(MainActivity.this, SettingsActivity.class);
+            startActivity(settingsIntent);
+            return true;
+        }
+        return super.onOptionsItemSelected(item);
+    }
 }
 
 

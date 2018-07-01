@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="settings_by_department_label">
+
+        <item>@string/settings_by_department_label_football</item>
+        <item>@string/settings_by_department_label_sport</item>
+        <item>@string/settings_by_department_label_film</item>
+        <item>@string/settings_by_department_label_business</item>
+        <item>@string/settings_by_department_label_music</item>
+
+
+    </string-array>
+
+    <string-array name="settings_by_department_value">
+
+        <item>@string/settings_by_department_value_football</item>
+        <item>@string/settings_by_department_value_sport</item>
+        <item>@string/settings_by_department_value_film</item>
+        <item>@string/settings_by_department_value_business</item>
+        <item>@string/settings_by_department_label_music</item>
+
+    </string-array>
+    <string-array name="settings_by_order_date_label">
+        <item>@string/settings_by_order_date_label_published</item>
+        <item>@string/settings_by_order_date_label_last_modified</item>
+        <item>@string/settings_by_order_date_label_newspaper</item>
+
+
+    </string-array>
+    <string-array name="settings_by_order_date_value">
+
+        <item>@string/settings_by_department_value_published</item>
+        <item>@string/settings_by_department_value_last_modified</item>
+        <item>@string/settings_by_department_value_newspaper</item>
+
+    </string-array>
+
+
+</resources>

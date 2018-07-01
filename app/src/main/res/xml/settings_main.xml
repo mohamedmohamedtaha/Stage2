@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+    android:title="@string/settings_title">
+    <EditTextPreference
+        android:defaultValue="@string/settings_from_date_default"
+        android:inputType="date"
+        android:key="@string/settings_from_date_key"
+        android:selectAllOnFocus="true"
+        android:title="@string/settings_from_date_label" />
+
+    <EditTextPreference
+        android:defaultValue="@string/settings_to_date_default"
+        android:inputType="date"
+        android:key="@string/settings_to_date_key"
+        android:selectAllOnFocus="true"
+        android:title="@string/settings_to_date_label" />
+    <ListPreference
+        android:defaultValue="@string/settings_department_default"
+        android:entries="@array/settings_by_department_label"
+        android:entryValues="@array/settings_by_department_value"
+        android:key="@string/settings_department_key"
+        android:title="@string/settings_department_label" />
+
+    <ListPreference
+        android:defaultValue="@string/settings_order_date_default"
+        android:entries="@array/settings_by_order_date_label"
+        android:entryValues="@array/settings_by_order_date_value"
+        android:key="@string/settings_order_date_key"
+        android:title="@string/settings_order_date_label" />
+
+</PreferenceScreen>
